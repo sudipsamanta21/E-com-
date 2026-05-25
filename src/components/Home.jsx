@@ -157,6 +157,7 @@ const Home = ({ selectedCategory }) => {
                           e.preventDefault();
                           e.stopPropagation();
                           addToCart(product);
+                          alert("Product added to cart");
                         }}
                         disabled={available === false}
                       >

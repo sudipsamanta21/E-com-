@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Home from "./Home"
 import axios from "axios";
-// import { json } from "react-router-dom";
-// import { BiSunFill, BiMoon } from "react-icons/bi";
+import AppContext from "../Context/Context";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ onSelectCategory, onSearch }) => {
+  const { cart } = useContext(AppContext);
   const getInitialTheme = () => {
     const storedTheme = localStorage.getItem("theme");
     return storedTheme ? storedTheme : "light-theme";
@@ -142,14 +143,19 @@ const Navbar = ({ onSelectCategory, onSearch }) => {
                 )}
               </button>
               <div className="d-flex align-items-center cart">
-                <a href="/cart" className="nav-link text-dark">
+                <Link to="/cart" className="nav-link text-dark">
                   <i
                     className="bi bi-cart me-2"
                     style={{ display: "flex", alignItems: "center" }}
                   >
                     Cart
+                    {cart && cart.length > 0 && (
+                      <span className="badge bg-primary ms-1">
+                        {cart.reduce((total, item) => total + item.quantity, 0)}
+                      </span>
+                    )}
                   </i>
-                </a>
+                </Link>
                 {/* <form className="d-flex" role="search" onSubmit={handleSearch} id="searchForm"> */}
                 <input
                   className="form-control me-2"
