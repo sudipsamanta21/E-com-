@@ -155,11 +155,12 @@ const Home = ({ selectedCategory }) => {
                         style={{ width: "100%" }}
                         onClick={(e) => {
                           e.preventDefault();
+                          e.stopPropagation();
                           addToCart(product);
                         }}
-                        disabled={!available}
+                        disabled={available === false}
                       >
-                        {available ? "Add to Cart" : "Out of Stock"}
+                        {available !== false ? "Add to Cart" : "Out of Stock"}
                       </button>
                     </div>
                   </div>
