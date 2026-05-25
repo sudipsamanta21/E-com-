@@ -86,7 +86,7 @@ const Home = ({ selectedCategory }) => {
                   width: "18rem",
                   height: "24rem",
                   boxShadow: "rgba(0, 0, 0, 0.24) 0px 2px 3px",
-                  backgroundColor: productAvailable ? "#fff" : "#ccc",
+                  backgroundColor: available ? "#fff" : "#ccc",
                   margin: "10px",
                   display: "flex",
                   flexDirection: "column",
@@ -157,9 +157,9 @@ const Home = ({ selectedCategory }) => {
                           e.preventDefault();
                           addToCart(product);
                         }}
-                        disabled={!productAvailable}
+                        disabled={!available}
                       >
-                        {productAvailable ? "Add to Cart" : "Out of Stock"}
+                        {available ? "Add to Cart" : "Out of Stock"}
                       </button>
                     </div>
                   </div>
