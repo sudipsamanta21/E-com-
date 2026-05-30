@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Cart from "./components/Cart";
+import DeveloperSection from "./components/DeveloperSection";
 import AddProduct from "./components/AddProduct";
 import Product from "./components/Product";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -35,6 +36,7 @@ function App() {
         <Route path="product/:id" element={<Product />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/product/update/:id" element={<UpdateProduct />} />
+        <Route path="/developers" element={<DeveloperSection />} />
       </Routes>
     </BrowserRouter>
   );

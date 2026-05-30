@@ -208,6 +208,15 @@ const Navbar = ({ onSelectCategory, onSearch }) => {
               Home
             </button>
           </Link>
+          <Link to="/developers" style={{ textDecoration: "none" }}>
+            <button
+              style={navLink(location.pathname === "/")}
+              onMouseEnter={(e) => { e.currentTarget.style.color = T.text; e.currentTarget.style.background = T.hint; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = location.pathname === "/" ? T.text : T.muted; e.currentTarget.style.background = location.pathname === "/" ? T.hint : "transparent"; }}
+            >
+              Developers
+            </button>
+          </Link>
 
           <Link to="/add_product" style={{ textDecoration: "none" }}>
             <button
