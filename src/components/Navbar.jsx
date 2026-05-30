@@ -163,7 +163,7 @@ const Navbar = ({ onSelectCategory, onSearch }) => {
   return (
     <header>
       <nav style={{
-        background:"#4a619f",
+        background:"#495d93",
         borderBottom: `0.5px solid ${T.border}`,
         padding: "0 28px",
         height: 64,
